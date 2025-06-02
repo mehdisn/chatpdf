@@ -73,7 +73,6 @@ streamlit run src/main.py
 ## TODO
 
 ### Interface Improvements
-- [ ] Add loading indicators for PDF processing
 - [ ] Implement better error handling and user feedback
 - [ ] Add support for multiple document uploads
 - [ ] Add chat history display and management

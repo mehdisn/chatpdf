@@ -81,10 +81,24 @@ class LLMManager:
 
     def _setup_prompt_template(self):
         self.prompt_template = PromptTemplate(
-            template="""Write a response that appropriately completes the request.
-### Instruction: {question}
-### Input: {context}
-### Response: Let me analyze the provided context and answer your question in detail.
+            template="""
+You are an expert AI assistant with deep proficiency in Persian language and culture. Your job is to use the provided context to generate clear, accurate, and contextually appropriate Persian-language answers.
+
+### Question: 
+{question}
+
+### Retrieved Context:
+{context}
+
+### Instructions:
+– Carefully review the Retrieved Context.
+- Respond in formal, accurate, and grammatically correct Persian.
+– Use only information from the Context; do not add any external details or guesses beyond the provided text.
+– If the context does not contain sufficient information, respond in Persian that “اطلاعات کافی در متن ارائه‌شده موجود نیست.”  
+- Make sure the answer is clear, well-structured, and directly addresses the question.
+– Incorporate all relevant information from the Context to fully answer the question.
+
+### Your Response (in Persian):
 """,
             input_variables=["context", "question"]
         )
@@ -93,7 +107,7 @@ class LLMManager:
         """Test the LLM with a simple greeting message."""
         try:
             test_prompt = PromptTemplate(
-                template="""Below is an instruction in English language. Write a response in English that appropriately completes the request.
+                template="""Below is an instruction in English language. Write a response in Persian that appropriately completes the request.
 
 ### Instruction: Hello, please introduce yourself.
 

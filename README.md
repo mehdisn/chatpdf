@@ -1,6 +1,6 @@
-# ChatPDF - Persian RAG
+# ChatPDF - RAG
 
-An application that allows users to chat with their PDF documents in Persian (Farsi). This tool uses advanced language models to understand and respond to questions about the content of a PDF file.
+An application that allows users to chat with their PDF documents. This tool uses advanced language models to understand and respond to questions about the content of a PDF file.
 
 ## Features
 
